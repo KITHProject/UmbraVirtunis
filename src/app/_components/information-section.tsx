@@ -1,24 +1,24 @@
-import Image from "next/image";
-import image from "../../../public/images/minion.png";
+import Image from "next/image"
+import image from "../../../public/images/minion.png"
 
 export default function InformationSection() {
   return (
-    <section className="flex flex-col items-center mt-20">
+    <section className="mt-20 flex flex-col items-center">
       <div className="flex justify-center text-center">
-        <p className="text-7xl font-bold text-white text-outline">
+        <p className="text-outline text-7xl font-bold text-white">
           Develop character by workout!
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-4 mt-10 place-items-center">
-        <div className="flex flex-col justify-center text-left items-center space-y-6">
-          <p className="text-3xl font-bold text-white text-outline">
+      <div className="mt-10 grid grid-cols-2 place-items-center gap-4">
+        <div className="flex flex-col items-center justify-center space-y-6 text-left">
+          <p className="text-outline text-3xl font-bold text-white">
             GOLEM IS A WEB3 RPG LIFESTYLE APP THAT COMBINES GAMING WITH WORKOUT.
           </p>
-          <p className="text-3xl font-bold text-white text-outline">
+          <p className="text-outline text-3xl font-bold text-white">
             Earn NFT as you progress and trade them on the market for rewards.
           </p>
         </div>
-        <div className="flex justify-center text-center items-center">
+        <div className="flex items-center justify-center text-center">
           <Image
             src={image.src}
             alt="logo"
@@ -29,5 +29,5 @@ export default function InformationSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

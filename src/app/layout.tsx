@@ -18,14 +18,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ReactQueryProvider>
-    <html lang="en" className={`${virgil.className}`}>
-      <body className="bg-[url('/images/background.jpg')] bg-cover">
-        <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col">
-          <Header/>
-          {children}
-        </div>
-      </body>
-    </html>
+      <html lang="en" className={`${virgil.className}`}>
+        <body className="bg-[url('/images/background.jpg')] bg-cover">
+          <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col">
+            <Header />
+            {children}
+          </div>
+        </body>
+      </html>
     </ReactQueryProvider>
   )
 }

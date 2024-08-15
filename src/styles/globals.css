@@ -79,4 +79,9 @@
     -webkit-text-stroke: 0.11em black;
     paint-order: stroke fill;
   }
+
+  .rock-btn {
+    position: relative;
+    overflow: hidden; /* Ensure the pseudo-element is contained within the button */
+  }
 }
