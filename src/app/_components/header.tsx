@@ -7,7 +7,7 @@ import image from "../../../public/images/image.png"
 
 export default function Header() {
   return (
-    <header className="comic-border sticky top-4 z-10 my-4 flex h-16 items-center justify-between gap-4 rounded-xl bg-white bg-opacity-60 px-4 backdrop-blur-xl md:px-6">
+    <header className="comic-border sticky top-4 z-10 my-4 flex h-16 items-center justify-between gap-4 rounded-xl bg-white bg-opacity-60 px-4 backdrop-blur-xl md:px-6 shadow-[0_10px_45px_1px_rgba(0,0,0,0.4)]">
     <Link
       href="#"
       className="absolute -left-6 z-10 flex h-12 w-12 items-center justify-center gap-2 rounded-full font-semibold md:text-base"
@@ -21,28 +21,28 @@ export default function Header() {
       />
     </Link>
     <div></div>
-    <nav className="hidden flex-col gap-6 text-lg font-medium text-white md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+    <nav className="hidden flex-col gap-6 md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
       <Link
         href="#"
-        className="text-foreground transition-colors hover:text-foreground"
+        className="text-foreground transition-colors font-bold text-xl hover:text-foreground "
       >
         Home
       </Link>
       <Link
         href="#"
-        className="text-muted-foreground transition-colors hover:text-foreground"
+        className="text-muted-foreground transition-colors font-bold text-xl hover:text-foreground"
       >
         Marketplace
       </Link>
       <Link
         href="#"
-        className="text-muted-foreground transition-colors hover:text-foreground"
+        className="text-muted-foreground transition-colors font-bold text-xl hover:text-foreground"
       >
         Lore
       </Link>
       <Link
         href="#"
-        className="text-muted-foreground transition-colors hover:text-foreground"
+        className="text-muted-foreground transition-colors font-bold text-xl hover:text-foreground"
       >
         News
       </Link>
