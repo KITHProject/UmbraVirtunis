@@ -1,9 +1,8 @@
 import { ReactQueryProvider } from "@/providers/reactquery-provider"
 import "@/styles/globals.css"
-
-import { GeistSans } from "geist/font/sans"
 import { type Metadata } from "next"
 import localFont from "next/font/local"
+import Header from "./_components/header"
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -19,8 +18,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ReactQueryProvider>
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${virgil.className}`}>
+      <body className="bg-[url('/images/background.jpg')] bg-cover">
+        <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col">
+          <Header/>
+          {children}
+        </div>
+      </body>
     </html>
     </ReactQueryProvider>
   )
