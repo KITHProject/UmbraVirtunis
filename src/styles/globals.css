@@ -66,4 +66,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  .comic-border {
+    margin: 25px;
+    border: solid black;
+    border-color: black;
+    border-width: 3px 3px 3px 3px;
+    border-radius: 80% 15% 80% 15%/15% 80% 15% 80%;
+    transform: rotate(0deg);
+  }
 }
