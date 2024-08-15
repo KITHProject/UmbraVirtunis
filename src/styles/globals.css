@@ -74,4 +74,9 @@
     border-radius: 80% 15% 80% 15%/15% 80% 15% 80%;
     transform: rotate(0deg);
   }
+
+  .text-outline {
+    -webkit-text-stroke: 0.11em black;
+    paint-order: stroke fill;
+  }
 }
