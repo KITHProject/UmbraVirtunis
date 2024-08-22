@@ -1,8 +1,8 @@
 import { ReactQueryProvider } from "@/providers/reactquery-provider"
 import "@/styles/globals.css"
 import { type Metadata } from "next"
-import localFont from "next/font/local"
 import Header from "./_components/header"
+import { Iceland } from "@next/font/google"
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -10,17 +10,20 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 }
 
-const virgil = localFont({
-  src: "../fonts/Virgil.woff2",
+const iceland = Iceland({
+  subsets: ["latin"],
+  weight: "400",
 })
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ReactQueryProvider>
-      <html lang="en" className={`${virgil.className}`}>
-        <body className="bg-[url('/images/background.jpg')] bg-cover">
-          <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col">
+      <html lang="en" className={`${iceland.className}`}>
+        <body className="relative bg-[url('/images/background.png')] bg-cover bg-fixed bg-center">
+          <div className="absolute inset-0 z-0 bg-black opacity-45"></div>
+          <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col">
             <Header />
             {children}
           </div>
