@@ -24,6 +24,7 @@ export default function HomePage() {
         scrollToSection={scrollToSection}
       />
       <InformationSection section2Ref={section2Ref} />
+      <LoreSection />
     </div>
   )
 }
