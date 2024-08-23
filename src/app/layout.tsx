@@ -4,6 +4,7 @@ import { type Metadata } from "next"
 import Header from "./_components/header"
 import { Iceland } from "@next/font/google"
 import GridPattern from "@/components/magicui/grid-pattern"
+import { Suspense } from "react"
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -22,18 +23,24 @@ export default function RootLayout({
   return (
     <ReactQueryProvider>
       <html lang="en" className={`${iceland.className}`}>
-        <body className="relative bg-[url('/images/background.png')] bg-cover bg-fixed bg-center">
-          <GridPattern
-            width={18}
-            height={18}
-            x={-1}
-            y={-1}
-            className="stroke-white/10"
-          />
-          <div className="absolute inset-0 z-0 bg-black opacity-45"></div>
-          <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col">
-            <Header />
-            {children}
+        <body className="overflow-hidden">
+          <div className="fixed h-full w-full overflow-auto bg-[url('/images/background.png')] bg-cover bg-fixed bg-center">
+            <div className="relative">
+              <GridPattern
+                width={18}
+                height={18}
+                x={-1}
+                y={-1}
+                className="w-full stroke-white/10"
+              />
+              <div className="absolute inset-0 z-0 bg-black opacity-45"></div>
+              <Suspense fallback={null}>
+                <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col">
+                  <Header />
+                  {children}
+                </div>
+              </Suspense>
+            </div>
           </div>
         </body>
       </html>

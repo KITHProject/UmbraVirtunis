@@ -17,7 +17,8 @@ export default function LoreSection() {
       <Card className="comic-border w-full bg-white bg-opacity-60 backdrop-blur-xl">
         <CardHeader className="text-center">
           <CardTitle>
-            Unveil the Ancient Lore: The Golem’s Odyssey in a Forgotten World
+            Unveil the Ancient Lore: The Golem &apos s Odyssey in a Forgotten
+            World
           </CardTitle>
         </CardHeader>
         <CardContent className="text-center">

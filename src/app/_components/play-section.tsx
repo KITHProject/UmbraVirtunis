@@ -1,7 +1,5 @@
 "use client"
 
-import HyperText from "@/components/magicui/hyper-text"
-
 type Props = {
   section1Ref: React.RefObject<HTMLDivElement>
   section2Ref: React.RefObject<HTMLDivElement>
@@ -16,13 +14,11 @@ export default function PlaySection({
   return (
     <section
       ref={section1Ref}
-      className="flex h-[calc(100vh-120px)] flex-col items-center justify-center"
+      className="flex h-[calc(100vh-120px)] flex-col items-center justify-center gap-12"
     >
-      <HyperText
-        className="text-6xl text-white dark:text-white"
-        text="START EXPLORING"
-        duration={1500}
-      />
+      <h1 className="z-10 text-center text-6xl text-white">
+        BEGIN YOUR JOURNEY
+      </h1>
       <div
         onClick={() => scrollToSection(section2Ref)}
         className="mouse mt-4 cursor-pointer"
