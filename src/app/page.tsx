@@ -3,6 +3,8 @@
 import { useRef } from "react"
 import InformationSection from "./_components/information-section"
 import PlaySection from "./_components/play-section"
+import InfoSection from "./_components/info-section"
+import LoreSection from "./_components/lore-section"
 
 export default function HomePage() {
   const section1Ref = useRef<HTMLDivElement>(null)
