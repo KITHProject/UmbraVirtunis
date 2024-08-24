@@ -1,9 +1,11 @@
 "use client"
 
 import { useRef } from "react"
-import InformationSection from "./_components/information-section"
-import PlaySection from "./_components/play-section"
-import WhatsSection from "./_components/whats-section"
+import InformationSection from "./_components/sections/information-section"
+import PlaySection from "./_components/sections/play-section"
+import LoreSection from "./_components/sections/lore-section"
+import CharactersSection from "./_components/sections/characters-section"
+
 
 export default function HomePage() {
   const section1Ref = useRef<HTMLDivElement>(null)
@@ -23,7 +25,8 @@ export default function HomePage() {
         scrollToSection={scrollToSection}
       />
       <InformationSection section2Ref={section2Ref} />
-      <WhatsSection />
+      <CharactersSection/>
+      <LoreSection />
     </div>
   )
 }

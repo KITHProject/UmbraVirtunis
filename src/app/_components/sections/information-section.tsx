@@ -6,12 +6,12 @@ import {
   CarouselItem,
   CarouselDots,
 } from "@/components/ui/carousel"
-import { useIsVisible } from "@/hooks/useIsVisible"
 import Image from "next/image"
 import { useRef } from "react"
 import human from "@/assets/human.png"
 import elf from "@/assets/elf.png"
 import orc from "@/assets/orc.png"
+import { useIsVisible } from "@/hooks/useIsVisible"
 
 type Props = {
   section2Ref: React.RefObject<HTMLDivElement>
