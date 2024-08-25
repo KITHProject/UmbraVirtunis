@@ -26,7 +26,7 @@ export default function HomePage() {
       />
       <InformationSection section2Ref={section2Ref} />
       <CharactersSection/>
-      <LoreSection />
+      {/* <LoreSection /> */}
     </div>
   )
 }

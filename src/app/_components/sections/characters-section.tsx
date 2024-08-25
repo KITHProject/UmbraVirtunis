@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useIsVisible } from "@/hooks/useIsVisible";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import orc from "@/assets/orc.png";
+import { CardHover } from "@/components/card-hover";
 
 export default function CharactersSection() {
   const ref1 = useRef<HTMLDivElement | null>(null);
@@ -38,6 +39,9 @@ export default function CharactersSection() {
             </TabsList>
             <TabsContent value="Planet1">
               <p className="text-white text-center mt-8">Details about Planet 1</p>
+              <div>
+              <CardHover />
+              </div>
             </TabsContent>
             <TabsContent value="Planet2">
               <p className="text-white text-center mt-8">Details about Planet 2</p>

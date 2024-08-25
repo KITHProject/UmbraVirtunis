@@ -7,7 +7,7 @@ import NinjaNOBG from "@/assets/ninja-nobg.png"
 
 export function CardHover() {
   return (
-    <div className="flex h-[40rem] w-full items-center justify-center">
+    <div className="flex h-[20rem] w-full items-center justify-center">
       <PinContainer
         title="/ui.aceternity.com"
         pinChild={

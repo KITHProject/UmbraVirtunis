@@ -47,7 +47,7 @@ export default function InformationSection({ section2Ref }: Props) {
             isVisible1 ? "opacity-100" : "opacity-0"
           }`}
         >
-          <p className="mt-48 text-6xl text-white">JOIN NOW &</p>
+          <p className="mt-12 text-6xl text-white">JOIN NOW &</p>
           <p className="text-6xl text-white">START WORKOUT</p>
         </div>
         <div
@@ -73,7 +73,7 @@ export default function InformationSection({ section2Ref }: Props) {
                         alt={item.alt}
                         width={2000}
                         height={2000}
-                        className="h-full w-full"
+                        className="h-[20rem] w-[20rem]"
                       />
                     </div>
                   </CarouselItem>

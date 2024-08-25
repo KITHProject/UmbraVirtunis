@@ -12,7 +12,7 @@ export function useIsVisible(ref: RefObject<Element>) {
           setIntersected(true)
         }
       },
-      { threshold: 1 }
+      { threshold: 0.5 }
     )
 
     observer.observe(ref.current)
