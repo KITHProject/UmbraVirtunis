@@ -1,14 +1,17 @@
-"use client";
+"use client"
 
-import { useRef } from "react";
-import { useIsVisible } from "@/hooks/useIsVisible";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import orc from "@/assets/orc.png";
-import { CardHover } from "@/components/card-hover";
+import { useRef } from "react"
+import { useIsVisible } from "@/hooks/useIsVisible"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import orc from "@/assets/orc.png"
+import planet1 from "@/assets/planet1.png"
+import planet2 from "@/assets/planet2.png"
+import { CardHover } from "@/components/card-hover"
+import { Characters } from "@/components/characters"
 
 export default function CharactersSection() {
-  const ref1 = useRef<HTMLDivElement | null>(null);
-  const isVisible = useIsVisible(ref1);
+  const ref1 = useRef<HTMLDivElement | null>(null)
+  const isVisible = useIsVisible(ref1)
 
   return (
     <section className="z-10 mx-2 flex h-[calc(100vh)] flex-col items-center justify-center">
@@ -18,40 +21,61 @@ export default function CharactersSection() {
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <p className="text-6xl text-white mt-20">CHARACTERS</p>
-          <p className="mt-4 text-4xl text-white text-center max-w-4xl">
+          <p className="mt-20 text-6xl text-white">CHARACTERS</p>
+          <p className="mt-4 max-w-4xl text-center text-4xl text-white">
             Choose your champion from five unique races in a galaxy on the brink
             of war. Each race brings its own strengths.
           </p>
         </div>
         <div className="mt-16 flex justify-center">
-          <Tabs defaultValue="Planet1" className="w-full max-w-[800px] flex flex-col justify-center">
-            <TabsList className="justify-center">
-              <TabsTrigger value="Planet1" backgroundImage={orc.src}>
+          <Tabs
+            defaultValue="Planet1"
+            className="flex w-full max-w-[800px] flex-col justify-center"
+          >
+            <TabsList className="my-2 justify-center">
+              <TabsTrigger
+                value="Planet1"
+                backgroundImage={planet1.src}
+                className="h-40 w-40"
+              >
                 Planet 1
               </TabsTrigger>
-              <TabsTrigger value="Planet2" backgroundImage={orc.src}>
+              <TabsTrigger
+                value="Planet2"
+                backgroundImage={planet2.src}
+                className="h-40 w-40"
+              >
                 Planet 2
               </TabsTrigger>
-              <TabsTrigger value="Planet3" backgroundImage={orc.src}>
+              <TabsTrigger
+                value="Planet3"
+                backgroundImage={planet1.src}
+                className="h-40 w-40"
+              >
                 Planet 3
               </TabsTrigger>
             </TabsList>
             <TabsContent value="Planet1">
-              <p className="text-white text-center mt-8">Details about Planet 1</p>
+              <p className="mt-8 text-center text-white">
+                Details about Planet 1
+              </p>
               <div>
-              <CardHover />
+                <CardHover />
               </div>
             </TabsContent>
             <TabsContent value="Planet2">
-              <p className="text-white text-center mt-8">Details about Planet 2</p>
+              <div className="mt-16">
+                <Characters />
+              </div>
             </TabsContent>
             <TabsContent value="Planet3">
-              <p className="text-white text-center mt-8">Details about Planet 3</p>
+              <p className="mt-8 text-center text-white">
+                Details about Planet 3
+              </p>
             </TabsContent>
           </Tabs>
         </div>
       </div>
     </section>
-  );
+  )
 }
