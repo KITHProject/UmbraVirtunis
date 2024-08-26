@@ -2,7 +2,7 @@ import { ReactQueryProvider } from "@/providers/reactquery-provider"
 import "@/styles/globals.css"
 import { type Metadata } from "next"
 import Header from "./_components/header"
-import { Iceland } from "@next/font/google"
+import { Iceland } from "next/font/google"
 import GridPattern from "@/components/magicui/grid-pattern"
 import { Suspense } from "react"
 

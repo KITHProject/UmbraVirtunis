@@ -9,14 +9,13 @@ export function CardHover() {
   return (
     <div className="flex h-[10rem] w-full items-center justify-center">
       <PinContainer
-        title="/ui.aceternity.com"
         pinChild={
           <Image
             src={NinjaNOBG}
             alt={"Ninja"}
             width={2000}
             height={2000}
-            className="z-50 h-full w-full rotate-45"
+            className="z-50 h-full w-full"
           />
         }
       >

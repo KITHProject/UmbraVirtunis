@@ -11,7 +11,6 @@ export const PinContainer = ({
 }: {
   children: React.ReactNode
   pinChild?: React.ReactNode
-  title?: string
   href?: string
   className?: string
   containerClassName?: string
@@ -29,7 +28,9 @@ export const PinContainer = ({
       <motion.div
         variants={{
           rest: { transform: "translate(-50%,-50%) rotateX(0deg) scale(1)" },
-          hover: { transform: "translate(-50%,-50%) rotateX(35deg) scale(1.05)" },
+          hover: {
+            transform: "translate(-50%,-50%) rotateX(35deg) scale(1.05)",
+          },
         }}
         transition={{ duration: 0.5 }}
         className="absolute left-1/2 top-1/2 flex items-start justify-start overflow-hidden shadow-[0_8px_16px_rgb(0_0_0/0.4)] group-hover:shadow-[0_8px_16px_rgb(0_0_0/0.8)]"
@@ -41,17 +42,11 @@ export const PinContainer = ({
   )
 }
 
-const PinPerspective = ({
-  pinChild,
-}: {
-  title?: string
-  href?: string
-  pinChild?: React.ReactNode
-}) => {
+const PinPerspective = ({ pinChild }: { pinChild?: React.ReactNode }) => {
   return (
     <motion.div
       variants={{
-        rest: { opacity: 0, y: 40 , scale: 1},
+        rest: { opacity: 0, y: 40, scale: 1 },
         hover: { opacity: 1, y: 0, scale: 1.25 },
       }}
       transition={{ duration: 0.7 }}
@@ -61,7 +56,7 @@ const PinPerspective = ({
         <div className="absolute inset-x-0 bottom-[2rem] flex justify-center">
           <div className="relative z-10 flex items-center space-x-2">
             <span className="relative z-20 inline-block h-[10rem] w-[10rem] text-xs font-bold text-white">
-              <span className="absolute inset-0 h-full w-full -rotate-45 overflow-clip backdrop-sepia-0">
+              <span className="absolute inset-0 h-full w-full overflow-clip backdrop-sepia-0">
                 {pinChild}
                 <span className="absolute inset-0 -z-10 opacity-45 shadow-2xl"></span>
               </span>
