@@ -15,7 +15,7 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "npx prettier --write",
-      "eslint --fix",
+      "npx eslint --fix",
       "git add"
     ]
   },
