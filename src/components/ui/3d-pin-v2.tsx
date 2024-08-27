@@ -1,7 +1,7 @@
-"use client"
-import React from "react"
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export const PinContainer = ({
   children,
@@ -18,29 +18,29 @@ export const PinContainer = ({
   return (
     <motion.div
       className={cn(
-        "group/pin relative z-50 cursor-pointer",
+        'group/pin relative z-50 cursor-pointer',
         containerClassName
       )}
-      style={{ perspective: "1000px" }}
+      style={{ perspective: '1000px' }}
       whileHover="hover"
       initial="rest"
     >
       <motion.div
         variants={{
-          rest: { transform: "translate(-50%,-50%) rotateX(0deg) scale(1)" },
+          rest: { transform: 'translate(-50%,-50%) rotateX(0deg) scale(1)' },
           hover: {
-            transform: "translate(-50%,-50%) rotateX(35deg) scale(1.05)",
+            transform: 'translate(-50%,-50%) rotateX(35deg) scale(1.05)',
           },
         }}
         transition={{ duration: 0.5 }}
         className="absolute left-1/2 top-1/2 flex items-start justify-start overflow-hidden shadow-[0_8px_16px_rgb(0_0_0/0.4)] group-hover:shadow-[0_8px_16px_rgb(0_0_0/0.8)]"
       >
-        <div className={cn("relative z-50", className)}>{children}</div>
+        <div className={cn('relative z-50', className)}>{children}</div>
       </motion.div>
       <PinPerspective pinChild={pinChild} />
     </motion.div>
-  )
-}
+  );
+};
 
 const PinPerspective = ({ pinChild }: { pinChild?: React.ReactNode }) => {
   return (
@@ -65,5 +65,5 @@ const PinPerspective = ({ pinChild }: { pinChild?: React.ReactNode }) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};

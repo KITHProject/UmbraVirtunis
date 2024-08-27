@@ -4,30 +4,30 @@ export const httpClient = {
   get: async <T>(url: string, params?: Record<string, string | number>) => {
     const queryString = params
       ? `?${new URLSearchParams(params as Record<string, string>)}`
-      : ""
-    return sendRequest<T>(`${url}${queryString}`, "GET")
+      : '';
+    return sendRequest<T>(`${url}${queryString}`, 'GET');
   },
 
   post: async <T>(url: string, data: unknown) => {
-    return sendRequest<T>(url, "POST", data)
+    return sendRequest<T>(url, 'POST', data);
   },
 
   patch: async <T>(url: string, data: unknown) => {
-    return sendRequest<T>(url, "PATCH", data)
+    return sendRequest<T>(url, 'PATCH', data);
   },
 
   put: async <T>(url: string, data: unknown) => {
-    return sendRequest<T>(url, "PUT", data)
+    return sendRequest<T>(url, 'PUT', data);
   },
 
   delete: async <T>(url: string) => {
-    return sendRequest<T>(url, "DELETE")
+    return sendRequest<T>(url, 'DELETE');
   },
-}
+};
 
 const headers: Record<string, string> = {
-  "Content-Type": "application/json",
-}
+  'Content-Type': 'application/json',
+};
 
 async function sendRequest<T>(
   url: string,
@@ -40,10 +40,10 @@ async function sendRequest<T>(
       ...headers,
     },
     body: data ? JSON.stringify(data) : undefined,
-  })
+  });
 
   if (!response.ok) {
-    throw new Error(`Network response was not ok: ${response.statusText}`)
+    throw new Error(`Network response was not ok: ${response.statusText}`);
   }
-  return (await response.json()) as Promise<T>
+  return (await response.json()) as Promise<T>;
 }

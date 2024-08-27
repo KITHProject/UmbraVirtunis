@@ -14,7 +14,9 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write"
+      "npx prettier --write",
+      "eslint --fix",
+      "git add"
     ]
   },
   "dependencies": {
@@ -29,9 +31,7 @@
     "embla-carousel-react": "^8.2.0",
     "framer-motion": "^11.3.29",
     "geist": "^1.3.0",
-    "husky": "^9.1.4",
     "immer": "^10.1.1",
-    "lint-staged": "^15.2.9",
     "lucide-react": "^0.427.0",
     "next": "^14.2.4",
     "react": "^18.3.1",
@@ -50,6 +50,9 @@
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.4",
+    "eslint-plugin-unused-imports": "^4.1.3",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",

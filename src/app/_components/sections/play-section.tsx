@@ -1,10 +1,10 @@
-"use client"
+'use client';
 
 type Props = {
   section1Ref: React.RefObject<HTMLDivElement>
   section2Ref: React.RefObject<HTMLDivElement>
   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void
-}
+};
 
 export default function PlaySection({
   section1Ref,
@@ -24,5 +24,5 @@ export default function PlaySection({
         className="mouse mt-4 cursor-pointer"
       />
     </section>
-  )
+  );
 }

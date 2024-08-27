@@ -35,9 +35,9 @@ import {
   Globe,
   ChevronsUpDown,
   Filter,
-} from "lucide-react"
+} from 'lucide-react';
 
-export type Icon = LucideIcon
+export type Icon = LucideIcon;
 
 export const Icons = {
   close: X,
@@ -148,4 +148,4 @@ export const Icons = {
       />
     </svg>
   ),
-}
+};

@@ -1,11 +1,11 @@
-import { httpClient } from "@/lib/http-client"
-import { useGenericMutation } from "@/lib/query-client"
+import { httpClient } from '@/lib/http-client';
+import { useGenericMutation } from '@/lib/query-client';
 
 type UseDelete<T> = {
   url: string
   params?: object
   updater?: (oldData: T, id: number) => T
-}
+};
 
 export const useDelete = <T>({ url, params, updater }: UseDelete<T>) => {
   return useGenericMutation<T, number>(
@@ -14,5 +14,5 @@ export const useDelete = <T>({ url, params, updater }: UseDelete<T>) => {
     url,
     params,
     updater
-  )
-}
+  );
+};

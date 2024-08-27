@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
-import Link from "next/link"
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -37,7 +37,7 @@ export default function Header() {
         </Link>
       </nav>
       <Button
-        variant={"futuristic"}
+        variant={'futuristic'}
         className="text-md relative border border-transparent font-thin text-white transition-all duration-300 ease-in-out hover:border-white"
       >
         <div className="z-100 pointer-events-none absolute inset-0 before:absolute before:-left-[2px] before:-top-[2px] before:h-2 before:w-2 before:border-l-2 before:border-t-2 before:border-white before:content-[''] after:absolute after:-right-[2px] after:-top-[2px] after:h-2 after:w-2 after:border-r-2 after:border-t-2 after:border-white after:content-['']">
@@ -96,5 +96,5 @@ export default function Header() {
         </SheetContent>
       </Sheet>
     </header>
-  )
+  );
 }

@@ -1,40 +1,40 @@
-"use client"
+'use client';
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselDots,
-} from "@/components/ui/carousel"
-import Image from "next/image"
-import { useRef } from "react"
-import human from "@/assets/human.png"
-import elf from "@/assets/elf.png"
-import orc from "@/assets/orc.png"
-import { useIsVisible } from "@/hooks/useIsVisible"
+} from '@/components/ui/carousel';
+import Image from 'next/image';
+import { useRef } from 'react';
+import human from '@/assets/human.png';
+import elf from '@/assets/elf.png';
+import orc from '@/assets/orc.png';
+import { useIsVisible } from '@/hooks/useIsVisible';
 
 type Props = {
   section2Ref: React.RefObject<HTMLDivElement>
-}
+};
 
 const arrayOfImages = [
   {
     src: orc,
-    alt: "Orc",
+    alt: 'Orc',
   },
   {
     src: human,
-    alt: "Human",
+    alt: 'Human',
   },
   {
     src: elf,
-    alt: "Elf",
+    alt: 'Elf',
   },
-]
+];
 
 export default function InformationSection({ section2Ref }: Props) {
-  const ref1 = useRef<HTMLDivElement | null>(null)
-  const isVisible1 = useIsVisible(ref1)
+  const ref1 = useRef<HTMLDivElement | null>(null);
+  const isVisible1 = useIsVisible(ref1);
 
   return (
     <section
@@ -44,7 +44,7 @@ export default function InformationSection({ section2Ref }: Props) {
       <div ref={ref1}>
         <div
           className={`flex flex-col items-center transition-opacity duration-700 ease-in ${
-            isVisible1 ? "opacity-100" : "opacity-0"
+            isVisible1 ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <p className="mt-12 text-6xl text-white">JOIN NOW &</p>
@@ -52,7 +52,7 @@ export default function InformationSection({ section2Ref }: Props) {
         </div>
         <div
           className={`mt-32 grid grid-cols-5 gap-4 duration-700 ease-in ${
-            isVisible1 ? "opacity-100" : "opacity-0"
+            isVisible1 ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <div className="col-span-3">
@@ -61,7 +61,7 @@ export default function InformationSection({ section2Ref }: Props) {
           <div className="col-span-2">
             <Carousel
               className="max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-5xl"
-              opts={{ align: "start", loop: false }}
+              opts={{ align: 'start', loop: false }}
               slidesPerGroup={1}
             >
               <CarouselContent className="-ml-2">
@@ -85,5 +85,5 @@ export default function InformationSection({ section2Ref }: Props) {
         </div>
       </div>
     </section>
-  )
+  );
 }
