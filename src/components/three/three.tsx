@@ -9,13 +9,12 @@ import { HorizontalBlurShader } from 'three/examples/jsm/shaders/HorizontalBlurS
 import { VerticalBlurShader } from 'three/examples/jsm/shaders/VerticalBlurShader.js';
 import { FilmShader } from 'three/examples/jsm/shaders/FilmShader.js';
 
-
 const BadTVShader = {
   uniforms: {
-    'distortion': { value: 0.5 },
-    'distortion2': { value: 0.5 },
-    'speed': { value: 0.5 },
-    'rollSpeed': { value: 0.5 },
+    distortion: { value: 0.5 },
+    distortion2: { value: 0.5 },
+    speed: { value: 0.5 },
+    rollSpeed: { value: 0.5 },
   },
   vertexShader: `
       varying vec2 vUv;
@@ -37,9 +36,8 @@ const BadTVShader = {
         uv.x += sin(uv.y * 10.0 + rollSpeed) * distortion2;
         gl_FragColor = vec4(uv, 1.0, 1.0);
       }
-    `
+    `,
 };
-
 
 const VolumetericLightShader = {
   uniforms: {
@@ -88,13 +86,13 @@ const VolumetericLightShader = {
   
         gl_FragColor = color * exposure;
       }
-    `
+    `,
 };
-  
+
 const AdditiveBlendingShader = {
   uniforms: {
     tDiffuse: { value: null },
-    tAdd: { value: null }
+    tAdd: { value: null },
   },
   vertexShader: `
       varying vec2 vUv;
@@ -112,7 +110,7 @@ const AdditiveBlendingShader = {
         vec4 add = texture2D(tAdd, vUv);
         gl_FragColor = color + add;
       }
-    `
+    `,
 };
 
 const blendPass = new ShaderPass(AdditiveBlendingShader);
@@ -147,7 +145,13 @@ const ThreeScene: React.FC = () => {
     const OCCLUSION_LAYER = 1;
     const renderScale = 0.25;
 
-    let composer: EffectComposer, occlusionComposer: EffectComposer, itemMesh: THREE.Mesh, occMesh: THREE.Mesh, occRenderTarget: THREE.WebGLRenderTarget, lightSource: THREE.Object3D, vlShaderUniforms: any;
+    let composer: EffectComposer,
+      occlusionComposer: EffectComposer,
+      itemMesh: THREE.Mesh,
+      occMesh: THREE.Mesh,
+      occRenderTarget: THREE.WebGLRenderTarget,
+      lightSource: THREE.Object3D,
+      vlShaderUniforms: any;
 
     const getImageTexture = (image: HTMLImageElement, density = 1) => {
       const canvas = document.createElement('canvas');
@@ -167,7 +171,10 @@ const ThreeScene: React.FC = () => {
       lightSource.position.set(0, -15, -15);
 
       const itemGeo = new THREE.PlaneGeometry(9, 2.1);
-      const itemMaterial = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0.7 });
+      const itemMaterial = new THREE.MeshBasicMaterial({
+        transparent: true,
+        opacity: 0.7,
+      });
 
       const img = new Image();
       img.src = 'https://i.imgur.com/rPdlvTw.png';
@@ -188,7 +195,9 @@ const ThreeScene: React.FC = () => {
         itemMesh = new THREE.Mesh(itemGeo, itemMaterial);
         scene.add(itemMesh);
 
-        const occItemMaterial = new THREE.MeshBasicMaterial({ color: lightColor });
+        const occItemMaterial = new THREE.MeshBasicMaterial({
+          color: lightColor,
+        });
         occItemMaterial.map = itemTexture;
         occMesh = new THREE.Mesh(itemGeo, occItemMaterial);
         occMesh.layers.set(OCCLUSION_LAYER);
@@ -213,16 +222,18 @@ const ThreeScene: React.FC = () => {
       if (vBlur.uniforms.v) {
         vBlur.uniforms.v.value = bluriness / window.innerHeight;
       }
-    
 
-     
-      if(badTVPass.uniforms.distortion && badTVPass.uniforms.distortion2 && badTVPass.uniforms.speed && badTVPass.uniforms.rollSpeed) {
+      if (
+        badTVPass.uniforms.distortion &&
+        badTVPass.uniforms.distortion2 &&
+        badTVPass.uniforms.speed &&
+        badTVPass.uniforms.rollSpeed
+      ) {
         badTVPass.uniforms.distortion.value = 1.9;
         badTVPass.uniforms.distortion2.value = 1.2;
         badTVPass.uniforms.speed.value = 0.1;
         badTVPass.uniforms.rollSpeed.value = 0;
       }
-
 
       const vlPass = new ShaderPass(VolumetericLightShader);
       vlShaderUniforms = vlPass.uniforms;
@@ -238,17 +249,19 @@ const ThreeScene: React.FC = () => {
       occlusionComposer.addPass(badTVPass);
       occlusionComposer.addPass(vlPass);
 
-
-      if(filmPass.uniforms.grayscale && filmPass.uniforms.sIntensity && filmPass.uniforms.nIntensity && filmPass.uniforms.sCount) {
+      if (
+        filmPass.uniforms.grayscale &&
+        filmPass.uniforms.sIntensity &&
+        filmPass.uniforms.nIntensity &&
+        filmPass.uniforms.sCount
+      ) {
         filmPass.uniforms.sCount.value = 1200;
         filmPass.uniforms.grayscale.value = false;
         filmPass.uniforms.sIntensity.value = 1.5;
         filmPass.uniforms.nIntensity.value = 0.2;
       }
 
-
-      
-      if(blendPass.uniforms.tAdd) {
+      if (blendPass.uniforms.tAdd) {
         blendPass.uniforms.tAdd.value = occRenderTarget.texture;
       }
       blendPass.renderToScreen = true;
@@ -282,27 +295,71 @@ const ThreeScene: React.FC = () => {
       folder.open();
 
       folder = gui.addFolder('TV');
-      if(badTVPass.uniforms.distortion && badTVPass.uniforms.distortion2 && badTVPass.uniforms.speed && badTVPass.uniforms.rollSpeed) {
-        folder.add(badTVPass.uniforms.distortion, 'value').min(0).max(10).name('Distortion 1');
-        folder.add(badTVPass.uniforms.distortion2, 'value').min(0).max(10).name('Distortion 2');
-        folder.add(badTVPass.uniforms.speed, 'value').min(0).max(1).name('Speed');
-        folder.add(badTVPass.uniforms.rollSpeed, 'value').min(0).max(10).name('Roll Speed');
+      if (
+        badTVPass.uniforms.distortion &&
+        badTVPass.uniforms.distortion2 &&
+        badTVPass.uniforms.speed &&
+        badTVPass.uniforms.rollSpeed
+      ) {
+        folder
+          .add(badTVPass.uniforms.distortion, 'value')
+          .min(0)
+          .max(10)
+          .name('Distortion 1');
+        folder
+          .add(badTVPass.uniforms.distortion2, 'value')
+          .min(0)
+          .max(10)
+          .name('Distortion 2');
+        folder
+          .add(badTVPass.uniforms.speed, 'value')
+          .min(0)
+          .max(1)
+          .name('Speed');
+        folder
+          .add(badTVPass.uniforms.rollSpeed, 'value')
+          .min(0)
+          .max(10)
+          .name('Roll Speed');
         folder.open();
       }
-  
 
       folder = gui.addFolder('Light Position');
-      folder.add(lightSource.position, 'x').min(-50).max(50).onChange(updateShaderLight);
-      folder.add(lightSource.position, 'y').min(-50).max(50).onChange(updateShaderLight);
-      folder.add(lightSource.position, 'z').min(-50).max(50).onChange(updateShaderLight);
+      folder
+        .add(lightSource.position, 'x')
+        .min(-50)
+        .max(50)
+        .onChange(updateShaderLight);
+      folder
+        .add(lightSource.position, 'y')
+        .min(-50)
+        .max(50)
+        .onChange(updateShaderLight);
+      folder
+        .add(lightSource.position, 'z')
+        .min(-50)
+        .max(50)
+        .onChange(updateShaderLight);
       folder.open();
 
       folder = gui.addFolder('Volumeteric Light Shader');
-      folder.add(vlShaderUniforms.exposure, 'value').min(0).max(1).name('Exposure');
+      folder
+        .add(vlShaderUniforms.exposure, 'value')
+        .min(0)
+        .max(1)
+        .name('Exposure');
       folder.add(vlShaderUniforms.decay, 'value').min(0).max(1).name('Decay');
-      folder.add(vlShaderUniforms.density, 'value').min(0).max(10).name('Density');
+      folder
+        .add(vlShaderUniforms.density, 'value')
+        .min(0)
+        .max(10)
+        .name('Density');
       folder.add(vlShaderUniforms.weight, 'value').min(0).max(1).name('Weight');
-      folder.add(vlShaderUniforms.samples, 'value').min(1).max(100).name('Samples');
+      folder
+        .add(vlShaderUniforms.samples, 'value')
+        .min(1)
+        .max(100)
+        .name('Samples');
       folder.open();
     };
 
@@ -316,12 +373,10 @@ const ThreeScene: React.FC = () => {
       const timeDelta = clockRef.current.getDelta();
       const elapsed = clockRef.current.getElapsedTime();
 
-      if(filmPass.uniforms.time && badTVPass.uniforms.time)
-      {
+      if (filmPass.uniforms.time && badTVPass.uniforms.time) {
         filmPass.uniforms.time.value += timeDelta;
         badTVPass.uniforms.time.value += 0.01;
       }
-    
 
       if (itemMesh) {
         itemMesh.rotation.y = Math.sin(elapsed / 2) / 15;
@@ -345,11 +400,12 @@ const ThreeScene: React.FC = () => {
 
     return () => {
       if (guiRef.current) guiRef.current.destroy();
-      if (containerRef.current) containerRef.current.removeChild(renderer.domElement);
+      if (containerRef.current)
+        containerRef.current.removeChild(renderer.domElement);
     };
   }, []);
 
-  return <div ref={containerRef} className="w-full h-screen" />;
+  return <div ref={containerRef} className="h-screen w-full" />;
 };
 
 export default ThreeScene;

@@ -27,7 +27,10 @@ export function FadeText({
   const axis = direction === 'up' || direction === 'down' ? 'y' : 'x';
 
   const FADE_ANIMATION_VARIANTS = useMemo(() => {
-    const { hidden, show, ...rest } = framerProps as Record<string, { [name: string]: number; opacity: number }>;
+    const { hidden, show, ...rest } = framerProps as Record<
+    string,
+    { [name: string]: number; opacity: number }
+    >;
 
     return {
       ...rest,

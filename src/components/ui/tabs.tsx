@@ -13,7 +13,7 @@ React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      'inline-flex h-10 items-center justify-center rounded-md bg-transparent p-1 text-muted-foreground gap-12', // Adjust gap for spacing between tabs
+      'inline-flex h-10 items-center justify-center gap-12 rounded-md bg-transparent p-1 text-muted-foreground', // Adjust gap for spacing between tabs
       className
     )}
     {...props}
@@ -31,16 +31,17 @@ React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> & {
     ref={ref}
     className={cn(
       'relative inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
-      'w-40 h-20',
+      'h-20 w-40',
       backgroundImage ? 'bg-cover bg-center bg-no-repeat' : '',
-      'text-white data-[state=inactive]:text-grey-400  data-[state=inactive]:opacity-50 ', 
+      'data-[state=inactive]:text-grey-400 text-white data-[state=inactive]:opacity-50',
       className
     )}
-    style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined }}
+    style={{
+      backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+    }}
     {...props}
   >
-    <span className="px-2 py-1 text-xl z-10">{children}</span>
-   
+    <span className="z-10 px-2 py-1 text-xl">{children}</span>
   </TabsPrimitive.Trigger>
 ));
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;

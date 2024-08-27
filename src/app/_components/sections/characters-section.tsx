@@ -11,7 +11,7 @@ export default function CharactersSection() {
   const isVisible = useIsVisible(ref1);
 
   return (
-    <section className="z-10 mx-2 flex min-h-[calc(100vh)] flex-col text-center items-center   ">
+    <section className="z-10 mx-2 flex min-h-[calc(100vh)] flex-col items-center text-center">
       <div ref={ref1}>
         <div
           className={`flex flex-col transition-opacity duration-700 ease-in ${
@@ -19,17 +19,17 @@ export default function CharactersSection() {
           }`}
         >
           <p className="mt-16 text-5xl text-white">CHARACTERS</p>
-          <p className="mt-2 text-3xl text-white ">
+          <p className="mt-2 text-3xl text-white">
             Choose your champion from five unique races in a galaxy on the brink
             of war. Each race brings its own strengths.
           </p>
         </div>
-        <div className="mt-12 flex justify-center max-w-7xl">
+        <div className="mt-12 flex max-w-7xl justify-center">
           <Tabs
             defaultValue="Planet1"
-            className="flex w-full w-full flex-col justify-center my-12"
+            className="my-12 flex w-full flex-col justify-center"
           >
-            <TabsList className="mt-8 mx-12 justify-center h-0 gap-8">
+            <TabsList className="mx-12 mt-8 h-0 justify-center gap-8">
               <TabsTrigger
                 value="Planet1"
                 backgroundImage={planet1.src}
