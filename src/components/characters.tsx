@@ -1,10 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import human from '@/assets/woman-full.png';
-import orc from '@/assets/orc-full.png';
-import dwarf from '@/assets/dwarf-full.png';
-import HumanAvatar from '@/assets/human-avatar.png';
-import OrcAvatar from '@/assets/orc-avatar.png';
-import DwarfAvatar from '@/assets/dwarf-avatar.png';
+import human from '@/assets/human-man-full.png';
+import orc from '@/assets/orc-man-full.png';
+import dwarf from '@/assets/dwarf-man-full.png';
+import HumanAvatar from '@/assets/human-man-avatar.png';
+import OrcAvatar from '@/assets/orc-man-avatar.png';
+import DwarfAvatar from '@/assets/dwarf-man-avatar.png';
 import Image from 'next/image';
 
 const arrayOfCharacters = [
