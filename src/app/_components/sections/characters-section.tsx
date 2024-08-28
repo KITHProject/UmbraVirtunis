@@ -4,7 +4,10 @@ import { useRef } from 'react';
 import { useIsVisible } from '@/hooks/useIsVisible';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import planet1 from '@/assets/planet1.png';
+import planet2 from '@/assets/planet2.png';
+import planet3 from '@/assets/planet3.png';
 import { Characters } from '@/components/characters';
+import { arrayOfCharacters1, arrayOfCharacters2 } from '@/constants/characters';
 
 export default function CharactersSection() {
   const ref1 = useRef<HTMLDivElement | null>(null);
@@ -19,7 +22,7 @@ export default function CharactersSection() {
           }`}
         >
           <p className="mt-16 text-5xl text-white">CHARACTERS</p>
-          <p className="mt-2 text-3xl text-white">
+          <p className="mt-2 text-3xl text-white max-w-3xl self-center">
             Choose your champion from five unique races in a galaxy on the brink
             of war. Each race brings its own strengths.
           </p>
@@ -39,14 +42,14 @@ export default function CharactersSection() {
               </TabsTrigger>
               <TabsTrigger
                 value="Planet2"
-                backgroundImage={planet1.src}
+                backgroundImage={planet2.src}
                 className="h-28 w-28"
               >
                 Planet 2
               </TabsTrigger>
               <TabsTrigger
                 value="Planet3"
-                backgroundImage={planet1.src}
+                backgroundImage={planet3.src}
                 className="h-28 w-28"
               >
                 Planet 3
@@ -54,17 +57,17 @@ export default function CharactersSection() {
             </TabsList>
             <TabsContent value="Planet1">
               <div className="mt-20">
-                <Characters />
+                <Characters arrayOfCharacters={arrayOfCharacters1} defaultValue='human'/>
               </div>
             </TabsContent>
             <TabsContent value="Planet2">
               <div className="mt-20">
-                <Characters />
+                <Characters arrayOfCharacters={arrayOfCharacters2} defaultValue='ninja'/>
               </div>
             </TabsContent>
             <TabsContent value="Planet3">
               <div className="mt-20">
-                <Characters />
+                <Characters arrayOfCharacters={arrayOfCharacters1} defaultValue='human'/>
               </div>
             </TabsContent>
           </Tabs>

@@ -1,40 +1,26 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import human from '@/assets/human-man-full.png';
-import orc from '@/assets/orc-man-full.png';
-import dwarf from '@/assets/dwarf-man-full.png';
-import HumanAvatar from '@/assets/human-man-avatar.png';
-import OrcAvatar from '@/assets/orc-man-avatar.png';
-import DwarfAvatar from '@/assets/dwarf-man-avatar.png';
 import Image from 'next/image';
 
-const arrayOfCharacters = [
-  {
-    name: 'Human',
-    avatar: HumanAvatar,
-    image: human,
-    description: 'Details about Human',
-    value: 'human',
-  },
-  {
-    name: 'Orc',
-    avatar: OrcAvatar,
-    image: orc,
-    description: 'Details about Orc',
-    value: 'orc',
-  },
-  {
-    name: 'Dwarf',
-    avatar: DwarfAvatar,
-    image: dwarf,
-    description: 'Details about Dwarf',
-    value: 'dwarf',
-  },
-];
 
-export function Characters() {
+
+type Props = {
+  arrayOfCharacters: 
+  {
+    name: string;
+    avatar: {
+      src: string;
+    };
+    image: any;
+    description: string;
+    value: string;
+  }[];
+  defaultValue: string;
+};
+
+export function Characters({ arrayOfCharacters, defaultValue }: Props) {
   return (
     <div className="w-full">
-      <Tabs defaultValue="orc" className="flex w-full flex-col justify-center">
+      <Tabs defaultValue={defaultValue} className="flex w-full flex-col justify-center">
         <TabsList className="my-2 justify-center gap-8">
           {arrayOfCharacters.map((character) => (
             <TabsTrigger
