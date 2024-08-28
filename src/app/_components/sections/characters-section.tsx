@@ -14,14 +14,14 @@ export default function CharactersSection() {
   const isVisible = useIsVisible(ref1);
 
   return (
-    <section className="z-10 mx-2 flex min-h-[calc(100vh)] flex-col items-center text-center">
-      <div ref={ref1}>
+    <section className="z-10 mx-2  flex min-h-[calc(100vh)] flex-col items-center text-center">
+      <div ref={ref1} className='mt-[128px]'>
         <div
           className={`flex flex-col transition-opacity duration-700 ease-in ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <p className="mt-16 text-5xl text-white">CHARACTERS</p>
+          <p className="text-5xl text-white">CHARACTERS</p>
           <p className="mt-2 text-3xl text-white max-w-3xl self-center">
             Choose your champion from five unique races in a galaxy on the brink
             of war. Each race brings its own strengths.
