@@ -8,44 +8,44 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart';
-const chartData = [
-  { month: 'January', desktop: 186 },
-  { month: 'February', desktop: 305 },
-  { month: 'March', desktop: 237 },
-  { month: 'April', desktop: 273 },
-  { month: 'May', desktop: 209 },
-  { month: 'June', desktop: 214 },
-];
 
 const chartConfig = {
   desktop: {
-    label: 'Desktop',
+    label: 'Character Stats',
     color: 'hsl(var(--chart-1))',
   },
 } satisfies ChartConfig;
 
-export function RadarHeroChart() {
+type Props = {
+  chartData: {
+    value: number;
+    label: string;
+  }[];
+};
+
+export function RadarHeroChart({ chartData }: Props) {
   return (
     <div>
       <ChartContainer
         config={chartConfig}
-        className="mx-auto aspect-square max-h-[350px]"
+        className="mx-auto aspect-square max-h-[300px] mx-2"
       >
         <RadarChart
           data={chartData}
           margin={{
-            top: -40,
-            bottom: -10,
+            top: 15,
+            bottom: 10,
           }}
         >
           <ChartTooltip
             cursor={false}
-            content={<ChartTooltipContent indicator="line"/>}
+            content={<ChartTooltipContent indicator="line" />}
           />
-          <PolarAngleAxis dataKey="month" />
+          <PolarAngleAxis dataKey="label" tick={{ fontSize: 14, fill: '#ffffff' }} />
           <PolarGrid />
           <Radar
-            dataKey="desktop"
+            dataKey="value"
+            stroke="var(--color-desktop)"
             fill="var(--color-desktop)"
             fillOpacity={0.6}
           />

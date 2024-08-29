@@ -14,6 +14,10 @@ type Props = {
     image: any;
     description: string;
     value: string;
+    chartData: {
+      value: number;
+      label: string;
+    }[];
   }[];
   defaultValue: string;
 };
@@ -60,7 +64,7 @@ export function Characters({ arrayOfCharacters, defaultValue }: Props) {
                   <div>
                   </div>
                   <div>
-                    <RadarHeroChart/>
+                    <RadarHeroChart chartData={character.chartData}/>
                   </div>
                 </div>
               </div>

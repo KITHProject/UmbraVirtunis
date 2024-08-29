@@ -15,11 +15,11 @@ export default function CharactersSection() {
 
   return (
     <section className="z-10 mx-2  flex min-h-[calc(100vh)] flex-col items-center text-center">
-      <div ref={ref1} className='mt-[128px]'>
+      <div ref={ref1} className={`mt-[128px] transition-opacity duration-700 ease-in ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}>
         <div
-          className={`flex flex-col transition-opacity duration-700 ease-in ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={'flex flex-col'}
         >
           <p className="text-5xl text-white">CHARACTERS</p>
           <p className="mt-2 text-3xl text-white max-w-3xl self-center">
