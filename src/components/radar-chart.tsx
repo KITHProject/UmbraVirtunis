@@ -38,8 +38,8 @@ export function RadarHeroChart({ chartData }: Props) {
           }}
         >
           <ChartTooltip
+            content={<ChartTooltipContent labelKey='value' />}
             cursor={false}
-            content={<ChartTooltipContent indicator="line" />}
           />
           <PolarAngleAxis dataKey="label" tick={{ fontSize: 14, fill: '#ffffff' }} />
           <PolarGrid />

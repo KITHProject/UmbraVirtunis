@@ -61,7 +61,23 @@ export function Characters({ arrayOfCharacters, defaultValue }: Props) {
                 </p>
                 <p className="text-xl text-white">{character.description}</p>
                 <div className='grid grid-cols-2 mt-4'>
-                  <div>
+                  <div className='flex flex-col justify-center ml-8'>
+                    <div className='inline-flex'>
+                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
+                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Adaptable Tactics</p>
+                    </div>
+                    <div className='inline-flex'>
+                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
+                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Stalwart Defense</p>
+                    </div>
+                    <div className='inline-flex'>
+                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
+                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Battle Command</p>
+                    </div>
+                    <div className='inline-flex'>
+                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
+                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Tactical Insight</p>
+                    </div>
                   </div>
                   <div>
                     <RadarHeroChart chartData={character.chartData}/>
