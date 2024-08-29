@@ -16,7 +16,7 @@ export default function PlaySection({
       ref={section1Ref}
       className="flex h-[calc(100vh-64px)] flex-col items-center justify-center gap-12"
     >
-      <h1 className="z-10 text-center text-6xl text-white">
+      <h1 className="text-center text-6xl text-white">
         BEGIN YOUR JOURNEY
       </h1>
       <div
