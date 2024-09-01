@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import InformationSection from './_components/sections/information-section';
 import PlaySection from './_components/sections/play-section';
 import CharactersSection from './_components/sections/characters-section';
+import HeroModel from '@/components/hero/hero';
 
 export default function HomePage() {
   const section1Ref = useRef<HTMLDivElement>(null);
@@ -24,6 +25,7 @@ export default function HomePage() {
       />
       <InformationSection section2Ref={section2Ref} />
       <CharactersSection />
+      <HeroModel/>
     </div>
   );
 }
