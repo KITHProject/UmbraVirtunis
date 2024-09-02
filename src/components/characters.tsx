@@ -2,30 +2,30 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from 'next/image';
 import { RadarHeroChart } from './radar-chart';
 
-
-
 type Props = {
-  arrayOfCharacters: 
-  {
-    name: string;
+  arrayOfCharacters: {
+    name: string
     avatar: {
-      src: string;
-    };
-    image: any;
-    description: string;
-    value: string;
+      src: string
+    }
+    image: any
+    description: string
+    value: string
     chartData: {
-      value: number;
-      label: string;
-    }[];
-  }[];
-  defaultValue: string;
+      value: number
+      label: string
+    }[]
+  }[]
+  defaultValue: string
 };
 
 export function Characters({ arrayOfCharacters, defaultValue }: Props) {
   return (
     <div className="w-full">
-      <Tabs defaultValue={defaultValue} className="flex w-full flex-col justify-center">
+      <Tabs
+        defaultValue={defaultValue}
+        className="flex w-full flex-col justify-center"
+      >
         <TabsList className="my-2 justify-center gap-8">
           {arrayOfCharacters.map((character) => (
             <TabsTrigger
@@ -52,7 +52,7 @@ export function Characters({ arrayOfCharacters, defaultValue }: Props) {
                   <div className="absolute bottom-4 left-[45%] h-[25px] w-[45%] -translate-x-1/2 transform bg-black opacity-90 blur-xl"></div>
                 </div>
               </div>
-              <div className="px-4 relative col-span-3 flex w-full flex-col border border-gray-600 bg-black/70 p-2 shadow-[0_10px_45px_1px_rgba(0,0,0,0.4)]">
+              <div className="relative col-span-3 flex w-full flex-col border border-gray-600 bg-black/70 p-2 px-4 shadow-[0_10px_45px_1px_rgba(0,0,0,0.4)]">
                 <div className="z-100 pointer-events-none absolute inset-0 before:absolute before:-left-[2px] before:-top-[2px] before:h-2 before:w-2 before:border-l-2 before:border-t-2 before:border-white before:content-[''] after:absolute after:-right-[2px] after:-top-[2px] after:h-2 after:w-2 after:border-r-2 after:border-t-2 after:border-white after:content-['']">
                   <div className="pointer-events-none absolute inset-0 before:absolute before:-bottom-[2px] before:-left-[2px] before:h-2 before:w-2 before:border-b-2 before:border-l-2 before:border-white before:content-[''] after:absolute after:-bottom-[2px] after:-right-[2px] after:h-2 after:w-2 after:border-b-2 after:border-r-2 after:border-white after:content-['']"></div>
                 </div>
@@ -60,27 +60,35 @@ export function Characters({ arrayOfCharacters, defaultValue }: Props) {
                   {character.name}
                 </p>
                 <p className="text-xl text-white">{character.description}</p>
-                <div className='grid grid-cols-2 mt-4'>
-                  <div className='flex flex-col justify-center ml-8'>
-                    <div className='inline-flex'>
-                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
-                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Adaptable Tactics</p>
+                <div className="mt-4 grid grid-cols-2">
+                  <div className="ml-8 flex flex-col justify-center">
+                    <div className="inline-flex">
+                      <div className="my-2 h-12 w-12 rounded-lg border-2 border-gray-600 bg-gray-500" />
+                      <p className="ml-4 flex flex-col justify-center text-center text-xl text-white">
+                        Adaptable Tactics
+                      </p>
                     </div>
-                    <div className='inline-flex'>
-                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
-                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Stalwart Defense</p>
+                    <div className="inline-flex">
+                      <div className="my-2 h-12 w-12 rounded-lg border-2 border-gray-600 bg-gray-500" />
+                      <p className="ml-4 flex flex-col justify-center text-center text-xl text-white">
+                        Stalwart Defense
+                      </p>
                     </div>
-                    <div className='inline-flex'>
-                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
-                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Battle Command</p>
+                    <div className="inline-flex">
+                      <div className="my-2 h-12 w-12 rounded-lg border-2 border-gray-600 bg-gray-500" />
+                      <p className="ml-4 flex flex-col justify-center text-center text-xl text-white">
+                        Battle Command
+                      </p>
                     </div>
-                    <div className='inline-flex'>
-                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
-                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Tactical Insight</p>
+                    <div className="inline-flex">
+                      <div className="my-2 h-12 w-12 rounded-lg border-2 border-gray-600 bg-gray-500" />
+                      <p className="ml-4 flex flex-col justify-center text-center text-xl text-white">
+                        Tactical Insight
+                      </p>
                     </div>
                   </div>
                   <div>
-                    <RadarHeroChart chartData={character.chartData}/>
+                    <RadarHeroChart chartData={character.chartData} />
                   </div>
                 </div>
               </div>

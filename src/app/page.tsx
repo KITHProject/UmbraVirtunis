@@ -5,10 +5,12 @@ import InformationSection from './_components/sections/information-section';
 import PlaySection from './_components/sections/play-section';
 import CharactersSection from './_components/sections/characters-section';
 import HeroModel from '@/components/hero/hero';
+import DiscordSection from './_components/sections/discord-section';
 
 export default function HomePage() {
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
+  const section3Ref = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
@@ -26,6 +28,7 @@ export default function HomePage() {
       <InformationSection section2Ref={section2Ref} />
       <CharactersSection />
       <HeroModel/>
+      <DiscordSection section3Ref={section3Ref}/>
     </div>
   );
 }
