@@ -5,18 +5,15 @@ import { Switch } from './ui/switch';
 import { useState } from 'react';
 import HeroModel from './hero/hero';
 
-
-
 type Props = {
-  arrayOfCharacters: 
-  {
-    name: string;
+  arrayOfCharacters: {
+    name: string
     avatar: {
-      src: string;
-    };
-    image: any;
-    description: string;
-    value: string;
+      src: string
+    }
+    image: any
+    description: string
+    value: string
     chartData: {
       value: number;
       label: string;
@@ -30,7 +27,10 @@ export function Characters({ arrayOfCharacters, defaultValue }: Props) {
   const [is3DView, set3DView] = useState(false);
   return (
     <div className="w-full">
-      <Tabs defaultValue={defaultValue} className="flex w-full flex-col justify-center">
+      <Tabs
+        defaultValue={defaultValue}
+        className="flex w-full flex-col justify-center"
+      >
         <TabsList className="my-2 justify-center gap-8">
           {arrayOfCharacters.map((character) => (
             <TabsTrigger
@@ -75,27 +75,35 @@ export function Characters({ arrayOfCharacters, defaultValue }: Props) {
                   {character.name}
                 </p>
                 <p className="text-xl text-white">{character.description}</p>
-                <div className='grid grid-cols-2 mt-4'>
-                  <div className='flex flex-col justify-center ml-8'>
-                    <div className='inline-flex'>
-                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
-                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Adaptable Tactics</p>
+                <div className="mt-4 grid grid-cols-2">
+                  <div className="ml-8 flex flex-col justify-center">
+                    <div className="inline-flex">
+                      <div className="my-2 h-12 w-12 rounded-lg border-2 border-gray-600 bg-gray-500" />
+                      <p className="ml-4 flex flex-col justify-center text-center text-xl text-white">
+                        Adaptable Tactics
+                      </p>
                     </div>
-                    <div className='inline-flex'>
-                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
-                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Stalwart Defense</p>
+                    <div className="inline-flex">
+                      <div className="my-2 h-12 w-12 rounded-lg border-2 border-gray-600 bg-gray-500" />
+                      <p className="ml-4 flex flex-col justify-center text-center text-xl text-white">
+                        Stalwart Defense
+                      </p>
                     </div>
-                    <div className='inline-flex'>
-                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
-                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Battle Command</p>
+                    <div className="inline-flex">
+                      <div className="my-2 h-12 w-12 rounded-lg border-2 border-gray-600 bg-gray-500" />
+                      <p className="ml-4 flex flex-col justify-center text-center text-xl text-white">
+                        Battle Command
+                      </p>
                     </div>
-                    <div className='inline-flex'>
-                      <div className='h-12 w-12 border-2 border-gray-600 rounded-lg bg-gray-500 my-2'/>
-                      <p className='flex flex-col justify-center text-center text-xl text-white ml-4'>Tactical Insight</p>
+                    <div className="inline-flex">
+                      <div className="my-2 h-12 w-12 rounded-lg border-2 border-gray-600 bg-gray-500" />
+                      <p className="ml-4 flex flex-col justify-center text-center text-xl text-white">
+                        Tactical Insight
+                      </p>
                     </div>
                   </div>
                   <div>
-                    <RadarHeroChart chartData={character.chartData}/>
+                    <RadarHeroChart chartData={character.chartData} />
                   </div>
                 </div>
               </div>

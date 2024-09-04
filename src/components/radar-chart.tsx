@@ -18,9 +18,9 @@ const chartConfig = {
 
 type Props = {
   chartData: {
-    value: number;
-    label: string;
-  }[];
+    value: number
+    label: string
+  }[]
 };
 
 export function RadarHeroChart({ chartData }: Props) {
@@ -28,7 +28,7 @@ export function RadarHeroChart({ chartData }: Props) {
     <div>
       <ChartContainer
         config={chartConfig}
-        className="mx-auto aspect-square max-h-[300px] mx-2"
+        className="mx-2 aspect-square max-h-[300px]"
       >
         <RadarChart
           data={chartData}
@@ -38,10 +38,13 @@ export function RadarHeroChart({ chartData }: Props) {
           }}
         >
           <ChartTooltip
-            content={<ChartTooltipContent labelKey='value' />}
+            content={<ChartTooltipContent labelKey="value" />}
             cursor={false}
           />
-          <PolarAngleAxis dataKey="label" tick={{ fontSize: 14, fill: '#ffffff' }} />
+          <PolarAngleAxis
+            dataKey="label"
+            tick={{ fontSize: 14, fill: '#ffffff' }}
+          />
           <PolarGrid />
           <Radar
             dataKey="value"
