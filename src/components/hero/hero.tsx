@@ -3,9 +3,13 @@ import { OrbitControls, useGLTF, Environment, useAnimations, Plane } from '@reac
 import { Suspense, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-function Model() {
+type Props = {
+  modelPath: string;
+};
+
+function Model({modelPath}: Props) {
   const group: any = useRef();
-  const { scene, animations } = useGLTF('/orc.glb');
+  const { scene, animations } = useGLTF(modelPath);
   const { actions } = useAnimations(animations, group);
   const [currentAnimation, setCurrentAnimation] = useState('Idle');
 
@@ -44,22 +48,22 @@ function Ground() {
     <Plane
       receiveShadow
       rotation={[-Math.PI / 2, 0, 0]}
-      position={[0, -2, 0]} // Slightly below the character's feet
-      args={[20, 20]} // Larger ground to capture shadows fully
+      position={[0, -2, 0]} 
+      args={[20, 20]} 
     >
       <shadowMaterial transparent opacity={0.5} />
     </Plane>
   );
 }
 
-export default function HeroModel() {
+export default function HeroModel({modelPath}: Props) {
   return (
-    <div className="w-full h-[600px]">
-      <Canvas shadows camera={{ position: [0, 2, 5], fov: 50 }}>
+    <div className="w-full h-full max-h-[500px]">
+      <Canvas shadows camera={{ position: [0, 2, 5], fov: 50 }} className='w-full h-full'>
         <ambientLight intensity={0.3} />
         <directionalLight
-          position={[5, 10, 5]} // Positioning the light correctly
-          intensity={1.2} // Slightly increased for realism
+          position={[5, 10, 5]}
+          intensity={1.2} 
           castShadow
           shadow-mapSize-width={4096}
           shadow-mapSize-height={4096}
@@ -69,24 +73,19 @@ export default function HeroModel() {
           shadow-camera-right={10}
           shadow-camera-top={10}
           shadow-camera-bottom={-10}
-          shadow-bias={-0.00005} // Reduced bias for accurate foot shadows
+          shadow-bias={-0.00005} 
         />
-        {/* <spotLight
-          position={[10, 20, 10]}
-          angle={0.3}
-          penumbra={0.5}
-          intensity={0.5}
-          castShadow
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
-        /> */}
         <pointLight position={[-10, -10, -10]} intensity={0.5} />
         <Suspense fallback={null}>
-          <Model />
+          <Model modelPath={modelPath}/>
           <Ground />
           <Environment preset="city" />
         </Suspense>
-        <OrbitControls enableZoom={true} />
+        <OrbitControls 
+          enableZoom={false} 
+          enablePan={false} 
+          zoomToCursor={false}
+        />
       </Canvas>
     </div>
   );

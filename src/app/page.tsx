@@ -25,7 +25,7 @@ export default function HomePage() {
       />
       <InformationSection section2Ref={section2Ref} />
       <CharactersSection />
-      <HeroModel/>
+      {/* <HeroModel/> */}
     </div>
   );
 }

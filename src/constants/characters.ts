@@ -30,6 +30,7 @@ export const arrayOfCharacters1 = [
       { label: 'Int', value: 9 },
       { label: 'End', value: 7.5 },
     ],
+    modelPath: '/orc.glb',
   },
   {
     name: 'Woman',
@@ -44,6 +45,7 @@ export const arrayOfCharacters1 = [
       { label: 'Int', value: 8.5 },
       { label: 'End', value: 8 },
     ],
+    modelPath: '/orc.glb',
   },
   {
     name: 'Dwarf',
@@ -58,6 +60,7 @@ export const arrayOfCharacters1 = [
       { label: 'Int', value: 7 },
       { label: 'End', value: 8.5 },
     ],
+    modelPath: '/orc.glb',
   },
   {
     name: 'Dwarf Woman',
@@ -72,6 +75,7 @@ export const arrayOfCharacters1 = [
       { label: 'Int', value: 7.5 },
       { label: 'End', value: 8 },
     ],
+    modelPath: '/orc.glb',
   },
 ];
 
@@ -89,6 +93,7 @@ export const arrayOfCharacters2 = [
       { label: 'Int', value: 7 },
       { label: 'End', value: 6.5 },
     ],
+    modelPath: '/orc.glb',
   },
   {
     name: 'Ninja Woman',
@@ -103,6 +108,7 @@ export const arrayOfCharacters2 = [
       { label: 'Int', value: 7.5 },
       { label: 'End', value: 7 },
     ],
+    modelPath: '/orc.glb',
   },
   {
     name: 'Orc Man',
@@ -117,6 +123,7 @@ export const arrayOfCharacters2 = [
       { label: 'Int', value: 6 },
       { label: 'End', value: 9 },
     ],
+    modelPath: '/orc.glb',
   },
   {
     name: 'Orc Woman',
@@ -131,5 +138,6 @@ export const arrayOfCharacters2 = [
       { label: 'Int', value: 6.5 },
       { label: 'End', value: 8.5 },
     ],
+    modelPath: '/orc.glb',
   },
 ];
