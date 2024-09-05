@@ -31,7 +31,6 @@ export default function NewsletterSection({ section4Ref }: Props) {
             </p>
           </div>
           <div className="-z-10 absolute top-10 bottom-0 left-[50%] h-[100%] w-[100%] -translate-x-1/2 transform rounded-full bg-black opacity-60 blur-2xl"></div>
-
           <div className="w-full max-w-sm space-y-2">
             <form className="flex space-x-2 items-center justify-center">
               <div className='relative'>
