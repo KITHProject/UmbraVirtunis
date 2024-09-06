@@ -4,17 +4,12 @@ import { useRef } from 'react';
 import { useIsVisible } from '@/hooks/useIsVisible';
 import { Coins, Sword, Users } from 'lucide-react';
 
-type Props = {
-  section4Ref: React.RefObject<HTMLDivElement>
-};
-
-export default function FeaturesSection({ section4Ref }: Props) {
+export default function FeaturesSection() {
   const ref1 = useRef<HTMLDivElement | null>(null);
   const isVisible1 = useIsVisible(ref1);
 
   return (
     <section
-      ref={section4Ref}
       className="z-10 mx-2 flex h-[calc(100vh)] flex-col items-center justify-center"
     >
      

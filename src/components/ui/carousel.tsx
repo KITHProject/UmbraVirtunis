@@ -7,6 +7,7 @@ import useEmblaCarousel, {
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Icons } from '../icons';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -54,7 +55,7 @@ React.HTMLAttributes<HTMLDivElement> & CarouselProps
       opts,
       setApi,
       plugins,
-      slidesPerGroup = 3, // Default to 3 slides per group
+      slidesPerGroup = 1, // Default to 3 slides per group
       className,
       children,
       ...props
@@ -162,7 +163,7 @@ React.HTMLAttributes<HTMLDivElement>
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div ref={carouselRef} className="overflow-hidden max-w-7xl">
       <div
         ref={ref}
         className={cn(
@@ -221,7 +222,7 @@ React.ComponentProps<typeof Button>
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="size-4" />
+      <Icons.chevronLeft className='h-8 w-8' />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -250,7 +251,7 @@ React.ComponentProps<typeof Button>
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="size-4" />
+      <Icons.chevronRight className='h-8 w-8' />
       <span className="sr-only">Next slide</span>
     </Button>
   );
@@ -265,8 +266,7 @@ const CarouselDots = () => {
     slidesPerGroup = 1,
   } = useCarousel();
   const totalSlides = api?.scrollSnapList().length || 0;
-  const numberOfDots = Math.ceil(totalSlides / slidesPerGroup); // Calculate the number of dots needed
-
+  const numberOfDots = Math.ceil(totalSlides / slidesPerGroup);
   const handleDotClick = (dotIndex: number) => {
     const targetIndex = dotIndex * slidesPerGroup;
     scrollToIndex(targetIndex);
@@ -280,10 +280,9 @@ const CarouselDots = () => {
           onClick={() => handleDotClick(index)}
           className={cn(
             'h-4 w-4 rounded-full',
-            selectedIndex >= index * slidesPerGroup &&
-              selectedIndex < (index + 1) * slidesPerGroup
-              ? 'bg-secondary'
-              : 'border-2 border-secondary hover:bg-gray-500'
+            selectedIndex === index 
+              ? 'bg-secondary rounded-full'
+              : 'rounded-full border-2 border-secondary hover:bg-gray-500'
           )}
         />
       ))}

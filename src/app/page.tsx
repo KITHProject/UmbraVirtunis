@@ -6,13 +6,12 @@ import PlaySection from './_components/sections/play-section';
 import CharactersSection from './_components/sections/characters-section';
 import DiscordSection from './_components/sections/discord-section';
 import NewsletterSection from './_components/sections/newsletter-section';
-import FeaturesSection from './_components/sections/features-section';
+import OverviewSection from './_components/sections/overwiew-section';
 
 export default function HomePage() {
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
-  const section3Ref = useRef<HTMLDivElement>(null);
-  const section4Ref = useRef<HTMLDivElement>(null);
+
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
@@ -29,9 +28,10 @@ export default function HomePage() {
       />
       <InformationSection section2Ref={section2Ref} />
       <CharactersSection />
-      <DiscordSection section3Ref={section3Ref} />
-      <FeaturesSection section4Ref={section4Ref}/>
-      <NewsletterSection section4Ref={section4Ref} />
+      <OverviewSection/>
+      {/* <FeaturesSection/> */}
+      <DiscordSection/>
+      <NewsletterSection/>
     </div>
   );
 }
