@@ -7,7 +7,7 @@ import planet1 from '@/assets/planet1.png';
 import planet2 from '@/assets/planet2.png';
 import planet3 from '@/assets/planet3.png';
 import { Characters } from '@/components/characters';
-import { arrayOfCharacters1, arrayOfCharacters2 } from '@/constants/characters';
+import { arrayOfCharacters1, arrayOfCharacters2, arrayOfCharacters3 } from '@/constants/characters';
 
 export default function CharactersSection() {
   const ref1 = useRef<HTMLDivElement | null>(null);
@@ -67,7 +67,7 @@ export default function CharactersSection() {
             </TabsContent>
             <TabsContent value="Planet3">
               <div className="mt-20">
-                <Characters arrayOfCharacters={arrayOfCharacters1} defaultValue='human'/>
+                <Characters arrayOfCharacters={arrayOfCharacters3} defaultValue='dragon'/>
               </div>
             </TabsContent>
           </Tabs>

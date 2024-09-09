@@ -7,6 +7,7 @@ import CharactersSection from './_components/sections/characters-section';
 import DiscordSection from './_components/sections/discord-section';
 import NewsletterSection from './_components/sections/newsletter-section';
 import OverviewSection from './_components/sections/overwiew-section';
+import NewsSection from './_components/sections/news-section';
 
 export default function HomePage() {
   const section1Ref = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ export default function HomePage() {
       <OverviewSection/>
       {/* <FeaturesSection/> */}
       <DiscordSection/>
+      <NewsSection/>
       <NewsletterSection/>
     </div>
   );

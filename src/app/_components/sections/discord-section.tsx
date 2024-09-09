@@ -26,9 +26,9 @@ export default function DiscordSection() {
               className="h-full w-full"
             />
           </div>
-          <div className='absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center'>
-            <Icons.discord className='h-28 w-28 fill-white hover:fill-blue-500 hover:cursor-pointer' />
-            <p className="text-5xl text-white  text-center">JOIN US ON DISCORD</p>
+          <div className='absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group  '>
+            <Icons.discord className='h-28 w-28 fill-white group-hover:fill-blue-500 group-hover:cursor-pointer' />
+            <p className="text-5xl text-white text-center group-hover:text-blue-500 group-hover:cursor-pointer">JOIN US ON DISCORD</p>
           </div>
           <div className="-z-10 absolute top-10 bottom-0 left-[50%] h-[100%] w-[100%] -translate-x-1/2 transform rounded-full bg-black opacity-60 blur-2xl"></div>
         </div>
