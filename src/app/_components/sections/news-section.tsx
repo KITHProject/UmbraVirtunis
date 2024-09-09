@@ -31,11 +31,13 @@ export default function NewsSection() {
         </h2>
         <div className="flex flex-col items-center justify-center">
           <div className="relative mb-4 flex w-full items-center justify-center">
-            <p className="z-10 w-fit bg-transparent bg-opacity-5 p-2 text-2xl text-white backdrop-blur-xl">
-              News
-            </p>
-
-            <div className="absolute left-0 top-1/2 w-full border-b-2"></div>
+            <div className="flex items-center w-full max-w-4xl">
+              <div className="h-[2px] bg-white flex-grow"></div>
+              <p className="z-10 mx-2 bg-transparent px-4 text-2xl text-white">
+                News
+              </p>
+              <div className="h-[2px] bg-white flex-grow"></div>
+            </div>
           </div>
           <div className="grid grid-cols-4 gap-4">
             {news.map((item) => (
@@ -54,11 +56,13 @@ export default function NewsSection() {
         </div>
         <div className="flex flex-col items-center justify-center mt-12">
           <div className="relative mb-4 flex w-full items-center justify-center">
-            <p className="z-10 w-fit bg-transparent bg-opacity-5 p-2 text-2xl text-white backdrop-blur-xl">
-              Patch notes
-            </p>
-
-            <div className="absolute left-0 top-1/2 w-full border-b-2"></div>
+            <div className="flex items-center w-full max-w-4xl">
+              <div className="h-[2px] bg-white flex-grow"></div>
+              <p className="z-10 mx-2 bg-transparent px-4 text-2xl text-white">
+                Patch notes
+              </p>
+              <div className="h-[2px] bg-white flex-grow"></div>
+            </div>
           </div>
           <div className="grid grid-cols-4 gap-4">
             {updates.map((item) => (
@@ -72,7 +76,7 @@ export default function NewsSection() {
             <div className="z-100 pointer-events-none absolute inset-0 before:absolute before:-left-[2px] before:-top-[2px] before:h-2 before:w-2 before:border-l-2 before:border-t-2 before:border-white before:content-[''] after:absolute after:-right-[2px] after:-top-[2px] after:h-2 after:w-2 after:border-r-2 after:border-t-2 after:border-white after:content-['']">
               <div className="pointer-events-none absolute inset-0 before:absolute before:-bottom-[2px] before:-left-[2px] before:h-2 before:w-2 before:border-b-2 before:border-l-2 before:border-white before:content-[''] after:absolute after:-bottom-[2px] after:-right-[2px] after:h-2 after:w-2 after:border-b-2 after:border-r-2 after:border-white after:content-['']"></div>
             </div>
-            READ MORE
+        READ MORE
           </Button>
         </div>
       </div>
