@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/card';
 import Image, { type StaticImageData } from 'next/image';
 
+
 type Props = {
   props: { title: string; img: StaticImageData; date: string }
 };
