@@ -30,7 +30,7 @@ export const arrayOfCharacters1 = [
       { label: 'Int', value: 9 },
       { label: 'End', value: 7.5 },
     ],
-    modelPath: '/orc.glb',
+    modelPath: '/human_man.glb',
   },
   {
     name: 'Woman',
@@ -45,7 +45,7 @@ export const arrayOfCharacters1 = [
       { label: 'Int', value: 8.5 },
       { label: 'End', value: 8 },
     ],
-    modelPath: '/orc.glb',
+    modelPath: '/human_woman.glb',
   },
   {
     name: 'Dwarf',
@@ -60,7 +60,7 @@ export const arrayOfCharacters1 = [
       { label: 'Int', value: 7 },
       { label: 'End', value: 8.5 },
     ],
-    modelPath: '/orc.glb',
+    modelPath: '/dwarf_man.glb',
   },
   {
     name: 'Dwarf Woman',
@@ -75,7 +75,7 @@ export const arrayOfCharacters1 = [
       { label: 'Int', value: 7.5 },
       { label: 'End', value: 8 },
     ],
-    modelPath: '/orc.glb',
+    modelPath: '/dwarf_woman.glb',
   },
 ];
 
@@ -138,6 +138,6 @@ export const arrayOfCharacters2 = [
       { label: 'Int', value: 6.5 },
       { label: 'End', value: 8.5 },
     ],
-    modelPath: '/orc.glb',
+    modelPath: '/orc_woman.glb',
   },
 ];
