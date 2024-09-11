@@ -24,7 +24,7 @@ export default function NewsSection() {
   const isVisible1 = useIsVisible(ref1);
 
   return (
-    <section className="z-10 mx-2 flex h-[calc(100vh)] flex-col items-center justify-center">
+    <section className="z-10 mx-2 flex h-[calc(100vh+120px)] flex-col items-center justify-center">
       <div className="container relative px-4 md:px-6" ref={ref1}>
         <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl">
           LATEST NEWS & UPDATES
