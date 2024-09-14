@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Facebook,
   Instagram,
@@ -9,7 +8,6 @@ import {
   Youtube,
 } from 'lucide-react';
 import Logo from '@/components/logo';
-import token from '@/assets/cosmic-shard.png';
 
 export default function Footer() {
   return (
@@ -19,9 +17,9 @@ export default function Footer() {
           <div className="mb-6 md:mb-0">
             <Logo />
             <div className="mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-sm">
-              <Link href="#" className="text-white hover:text-gray-300">
+              {/* <Link href="#" className="text-white hover:text-gray-300">
                 Staking
-              </Link>
+              </Link> */}
               <Link href="#" className="text-white hover:text-gray-300">
                 News
               </Link>
@@ -44,16 +42,16 @@ export default function Footer() {
           </div>
 
           <div className="mb-6 flex flex-col items-center md:mb-0">
-            <Image src={token.src} alt="UMB Token" width={100} height={100} />
+            {/* <Image src={token.src} alt="UMB Token" width={100} height={100} />
             <div className="text-center text-white">
               <p className="font-bold">UMB Price</p>
               <p className="text-2xl font-bold">$37.31</p>
               <p className="text-red-500">↓ -2.91%</p>
-            </div>
+            </div> */}
           </div>
 
           <div className="mb-6 text-white md:mb-0">
-            <p className="mb-2 font-bold">Available on</p>
+            {/* <p className="mb-2 font-bold">Available on</p>
             <div className="grid grid-cols-3 gap-4">
               {['Binance', 'Sushi', 'KuCoin', '1inch'].map((exchange) => (
                 <Image
@@ -64,7 +62,7 @@ export default function Footer() {
                   height={40}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -76,9 +74,9 @@ export default function Footer() {
             <Link href="#" className="ml-4 hover:text-gray-300">
               Privacy Policy
             </Link>
-            <Link href="#" className="ml-4 hover:text-gray-300">
+            {/* <Link href="#" className="ml-4 hover:text-gray-300">
               GDPR Notice
-            </Link>
+            </Link> */}
           </div>
           <div className="mb-4 text-sm md:mb-0">
             Umbra Virtunis © 2024. All rights reserved

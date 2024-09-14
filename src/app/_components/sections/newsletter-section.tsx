@@ -11,7 +11,7 @@ export default function NewsletterSection() {
   const isVisible1 = useIsVisible(ref1);
 
   return (
-    <section className="z-10 mx-2 mb-32 mt-8 flex flex-col items-center justify-center">
+    <section className="z-10 mx-2 mt-20 mb-40   flex flex-col items-center justify-center">
       <div className="container px-4 md:px-6" ref={ref1}>
         <div className="relative flex flex-col items-center justify-center space-y-4 text-center">
           <p className="cosmic-text-shadow text-center text-5xl text-white">
