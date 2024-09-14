@@ -39,11 +39,10 @@ export default function RootLayout({
                 <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col">
                   <Header />
                   {children}
-               
                 </div>
               </Suspense>
             </div>
-            <Footer/>
+            <Footer />
           </div>
         </body>
       </html>

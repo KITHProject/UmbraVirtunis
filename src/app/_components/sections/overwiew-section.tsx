@@ -38,7 +38,7 @@ export default function GameOverviewCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <div className="relative my-20 flex w-full items-center justify-center overflow-hidden text-white">
       <Carousel
         opts={{
           align: 'start',
@@ -54,14 +54,16 @@ export default function GameOverviewCarousel() {
       >
         <CarouselContent>
           {carouselItems.map((item, index) => (
-            <CarouselItem key={index} className="pl-0 w-full px-8">
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8 p-8 items-center">
-                <div className="space-y-6 col-span-3">
-                  <h2 className="text-5xl text-white">{item.title}</h2>
+            <CarouselItem key={index} className="w-full px-8 pl-0">
+              <div className="grid grid-cols-1 items-center gap-8 p-8 md:grid-cols-5">
+                <div className="col-span-3 space-y-6">
+                  <h2 className="cosmic-text-shadow text-5xl text-white">
+                    {item.title}
+                  </h2>
                   <p className="text-2xl text-white">{item.description}</p>
                   <Button
                     variant={'futuristic'}
-                    className="text-md relative border border-transparent font-thin text-white transition-all duration-300 ease-in-out hover:border-white mt-6"
+                    className="text-md relative mt-6 border border-transparent font-thin text-white transition-all duration-300 ease-in-out hover:border-white"
                   >
                     <div className="z-100 pointer-events-none absolute inset-0 before:absolute before:-left-[2px] before:-top-[2px] before:h-2 before:w-2 before:border-l-2 before:border-t-2 before:border-white before:content-[''] after:absolute after:-right-[2px] after:-top-[2px] after:h-2 after:w-2 after:border-r-2 after:border-t-2 after:border-white after:content-['']">
                       <div className="pointer-events-none absolute inset-0 before:absolute before:-bottom-[2px] before:-left-[2px] before:h-2 before:w-2 before:border-b-2 before:border-l-2 before:border-white before:content-[''] after:absolute after:-bottom-[2px] after:-right-[2px] after:h-2 after:w-2 after:border-b-2 after:border-r-2 after:border-white after:content-['']"></div>
@@ -70,7 +72,7 @@ export default function GameOverviewCarousel() {
                   </Button>
                 </div>
                 <div className="relative col-span-2">
-                  <div className="flex h-72 -my-8">
+                  <div className="-my-8 flex h-72">
                     <Image src={item.image} alt={'Visual'} fill />
                   </div>
                 </div>
@@ -78,8 +80,8 @@ export default function GameOverviewCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 bg-transparent border-none hover:bg-transparent" />
-        <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 bg-transparent border-none hover:bg-transparent" />
+        <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 border-none bg-transparent hover:bg-transparent" />
+        <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 border-none bg-transparent hover:bg-transparent" />
         <CarouselDots />
       </Carousel>
     </div>

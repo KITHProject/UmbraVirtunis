@@ -150,7 +150,6 @@ export const Icons = {
   ),
   discord: (props: LucideProps) => (
     <svg
-  
       fill="none"
       height="800px"
       viewBox="0 -28.5 256 256"

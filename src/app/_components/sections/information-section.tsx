@@ -17,14 +17,16 @@ export default function InformationSection({ section2Ref }: Props) {
       ref={section2Ref}
       className="z-10 mx-2 flex h-[calc(100vh)] flex-col items-center justify-center"
     >
-      <div ref={ref1} >
+      <div ref={ref1}>
         <div
           className={`flex flex-col items-center transition-opacity duration-700 ease-in ${
             isVisible1 ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <p className="text-5xl text-white">JOIN NOW &</p>
-          <p className="text-5xl text-white">START WORKOUT</p>
+          <p className="cosmic-text-shadow text-5xl text-white">JOIN NOW &</p>
+          <p className="cosmic-text-shadow text-5xl text-white">
+            START WORKOUT
+          </p>
           <YouTubeEmbed videoId="vW2_Dnf4sEo" />
         </div>
       </div>

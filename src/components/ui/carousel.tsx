@@ -4,7 +4,6 @@ import * as React from 'react';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Icons } from '../icons';
@@ -163,7 +162,7 @@ React.HTMLAttributes<HTMLDivElement>
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden max-w-7xl">
+    <div ref={carouselRef} className="max-w-7xl overflow-hidden">
       <div
         ref={ref}
         className={cn(
@@ -222,7 +221,7 @@ React.ComponentProps<typeof Button>
       onClick={scrollPrev}
       {...props}
     >
-      <Icons.chevronLeft className='h-8 w-8' />
+      <Icons.chevronLeft className="h-8 w-8" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -251,7 +250,7 @@ React.ComponentProps<typeof Button>
       onClick={scrollNext}
       {...props}
     >
-      <Icons.chevronRight className='h-8 w-8' />
+      <Icons.chevronRight className="h-8 w-8" />
       <span className="sr-only">Next slide</span>
     </Button>
   );
@@ -280,8 +279,8 @@ const CarouselDots = () => {
           onClick={() => handleDotClick(index)}
           className={cn(
             'h-4 w-4 rounded-full',
-            selectedIndex === index 
-              ? 'bg-secondary rounded-full'
+            selectedIndex === index
+              ? 'rounded-full bg-secondary'
               : 'rounded-full border-2 border-secondary hover:bg-gray-500'
           )}
         />

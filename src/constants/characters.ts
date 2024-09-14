@@ -20,16 +20,16 @@ import ElfAvatar from '@/assets/elf-man-avatar.png';
 import ElfWomanAvatar from '@/assets/elf-woman-avatar.png';
 import dragon from '@/assets/dragon-full.png';
 import DragonAvatar from '@/assets/dragon-avatar.png';
-import lizard from  '@/assets/lizard-full.png';
+import lizard from '@/assets/lizard-full.png';
 import LizardAvatar from '@/assets/lizard-avatar.png';
-
 
 export const arrayOfCharacters1 = [
   {
     name: 'Man',
     avatar: HumanAvatar,
     image: human,
-    description: 'Human males are versatile and adaptable, with balanced stats across all categories. They excel in endurance and intelligence, making them strong strategists and capable fighters in prolonged battles.',
+    description:
+      'Human males are versatile and adaptable, with balanced stats across all categories. They excel in endurance and intelligence, making them strong strategists and capable fighters in prolonged battles.',
     value: 'human',
     chartData: [
       { label: 'Str', value: 8 },
@@ -44,7 +44,8 @@ export const arrayOfCharacters1 = [
     name: 'Woman',
     avatar: HumanWomanAvatar,
     image: humanwoman,
-    description: 'Human females are agile and quick, with high intelligence and speed. They are often skilled in tactics and magic, relying on their wits and speed to outmaneuver opponents.',
+    description:
+      'Human females are agile and quick, with high intelligence and speed. They are often skilled in tactics and magic, relying on their wits and speed to outmaneuver opponents.',
     value: 'human-woman',
     chartData: [
       { label: 'Str', value: 7 },
@@ -59,7 +60,8 @@ export const arrayOfCharacters1 = [
     name: 'Dwarf',
     avatar: DwarfAvatar,
     image: dwarf,
-    description: 'Dwarf males are incredibly strong and durable, boasting the highest strength and endurance. Their sturdy build makes them formidable in close combat, though they are less agile.',
+    description:
+      'Dwarf males are incredibly strong and durable, boasting the highest strength and endurance. Their sturdy build makes them formidable in close combat, though they are less agile.',
     value: 'dwarf',
     chartData: [
       { label: 'Str', value: 9 },
@@ -74,7 +76,8 @@ export const arrayOfCharacters1 = [
     name: 'Dwarf Woman',
     avatar: DwarfWomanAvatar,
     image: dwarfwoman,
-    description: 'Dwarf females combine strength with surprising agility. While they are not as strong as their male counterparts, they are quicker on their feet and possess high endurance, making them relentless warriors.',
+    description:
+      'Dwarf females combine strength with surprising agility. While they are not as strong as their male counterparts, they are quicker on their feet and possess high endurance, making them relentless warriors.',
     value: 'dwarf-woman',
     chartData: [
       { label: 'Str', value: 8.5 },
@@ -92,7 +95,8 @@ export const arrayOfCharacters2 = [
     name: 'Ninja Man',
     avatar: NinjaAvatar,
     image: ninja,
-    description: 'Ninja males are masters of speed and agility, with unmatched reflexes. They prioritize stealth and quick strikes, excelling in intelligence to plan and execute deadly tactics.',
+    description:
+      'Ninja males are masters of speed and agility, with unmatched reflexes. They prioritize stealth and quick strikes, excelling in intelligence to plan and execute deadly tactics.',
     value: 'ninja',
     chartData: [
       { label: 'Str', value: 6 },
@@ -107,7 +111,8 @@ export const arrayOfCharacters2 = [
     name: 'Ninja Woman',
     avatar: NinjaWomanAvatar,
     image: ninjawoman,
-    description: 'Ninja females are the epitome of agility and intelligence, using their speed and sharp minds to outthink and outmaneuver enemies. They are swift and silent, making them deadly assassins',
+    description:
+      'Ninja females are the epitome of agility and intelligence, using their speed and sharp minds to outthink and outmaneuver enemies. They are swift and silent, making them deadly assassins',
     value: 'ninja-woman',
     chartData: [
       { label: 'Str', value: 5.5 },
@@ -122,7 +127,8 @@ export const arrayOfCharacters2 = [
     name: 'Orc Man',
     avatar: OrcAvatar,
     image: orc,
-    description: ' Orc males are powerhouses of strength and endurance, dominating in brute force. They are not as fast or agile but compensate with overwhelming power and resilience in battle.',
+    description:
+      ' Orc males are powerhouses of strength and endurance, dominating in brute force. They are not as fast or agile but compensate with overwhelming power and resilience in battle.',
     value: 'orc',
     chartData: [
       { label: 'Str', value: 9.5 },
@@ -137,7 +143,8 @@ export const arrayOfCharacters2 = [
     name: 'Orc Woman',
     avatar: OrcWomanAvatar,
     image: orcwoman,
-    description: 'Orc females are slightly more agile than the males, with a balance of strength and endurance. They are fierce warriors who use their agility to strike with precision while still holding considerable power.',
+    description:
+      'Orc females are slightly more agile than the males, with a balance of strength and endurance. They are fierce warriors who use their agility to strike with precision while still holding considerable power.',
     value: 'orc-woman',
     chartData: [
       { label: 'Str', value: 9 },
@@ -155,7 +162,8 @@ export const arrayOfCharacters3 = [
     name: 'Elf Man',
     avatar: ElfAvatar,
     image: elf,
-    description: 'Elf men are paragons of agility and precision, known for their unmatched skill in archery and swordplay. They blend speed with elegance, their movements precise and deliberate. Though not as physically imposing as other races, their keen senses and deep connection to nature give them an edge in both combat and diplomacy, making them versatile and formidable.',
+    description:
+      'Elf men are paragons of agility and precision, known for their unmatched skill in archery and swordplay. They blend speed with elegance, their movements precise and deliberate.',
     value: 'elf',
     chartData: [
       { label: 'Str', value: 6 },
@@ -170,7 +178,8 @@ export const arrayOfCharacters3 = [
     name: 'Elf Woman',
     avatar: ElfWomanAvatar,
     image: elfwoman,
-    description: 'Elf women are the epitome of grace and agility, moving with a fluidity that seems almost supernatural. They possess sharp intellect and exceptional skill in magic, making them formidable strategists and spellcasters. While they may lack the raw strength of other races, their speed, precision, and mystical prowess make them deadly opponents in any encounter.',
+    description:
+      'Elf women are the epitome of grace and agility, moving with a fluidity that seems almost supernatural. They possess sharp intellect and exceptional skill in magic, making them formidable strategists and spellcasters.',
 
     value: 'elf-woman',
     chartData: [
@@ -186,7 +195,8 @@ export const arrayOfCharacters3 = [
     name: 'Lizard',
     avatar: LizardAvatar,
     image: lizard,
-    description: 'Lizardfolk are agile and cunning, thriving in both water and on land. They rely on their quick reflexes and sharp instincts in combat, striking with surprising speed and ferocity. While they may not possess the same raw power as larger creatures, their adaptability, stealth, and resourcefulness make them dangerous and unpredictable adversaries.',
+    description:
+      'Lizardfolk are agile and cunning, thriving in both water and on land. They rely on their quick reflexes and sharp instincts in combat, striking with surprising speed and ferocity.',
 
     value: 'lizard',
     chartData: [
@@ -202,7 +212,8 @@ export const arrayOfCharacters3 = [
     name: 'Dragon',
     avatar: DragonAvatar,
     image: dragon,
-    description: 'Dragons are titanic beings of immense power and wisdom, their mere presence instilling awe and fear. They command the skies with their enormous wingspans and unleash devastating breath attacks that can decimate entire armies. While their size might suggest a lack of speed, dragons are surprisingly swift, combining brute strength with ancient magic to dominate any battlefield.',
+    description:
+      'Dragons are titanic beings of immense power and wisdom, their mere presence instilling awe and fear. They command the skies with their enormous wingspans and unleash devastating breath attacks that can decimate entire armies.',
 
     value: 'dragon',
     chartData: [
