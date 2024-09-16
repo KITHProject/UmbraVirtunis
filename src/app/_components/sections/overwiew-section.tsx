@@ -41,7 +41,6 @@ export default function GameOverviewCarousel() {
         opts={{
           align: 'start',
           loop: true,
-          watchDrag: false,
         }}
         className="w-full"
         setApi={(api) => {

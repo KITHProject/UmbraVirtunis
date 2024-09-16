@@ -95,6 +95,7 @@ export default function HeroModel({ modelPath }: Props) {
           enableZoom={false}
           enablePan={false}
           zoomToCursor={false}
+          mouseButtons={{ LEFT: undefined, MIDDLE: undefined, RIGHT: undefined}}
         />
       </Canvas>
     </div>
