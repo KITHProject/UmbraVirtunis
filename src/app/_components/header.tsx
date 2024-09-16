@@ -22,12 +22,6 @@ export default function Header() {
           href="#"
           className="font-semiblod text-xl text-white transition-colors hover:text-muted-foreground"
         >
-          Marketplace
-        </Link>
-        <Link
-          href="#"
-          className="font-semiblod text-xl text-white transition-colors hover:text-muted-foreground"
-        >
           Lore
         </Link>
         <Link

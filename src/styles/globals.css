@@ -121,3 +121,9 @@
     }
   }
 }
+
+@layer components {
+  .cosmic-text-shadow {
+    @apply drop-shadow-[1px_1px_5px_rgba(3,138,255,1)];
+  }
+}

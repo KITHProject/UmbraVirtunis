@@ -13,7 +13,6 @@ export default function HomePage() {
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
 
-
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -29,11 +28,11 @@ export default function HomePage() {
       />
       <InformationSection section2Ref={section2Ref} />
       <CharactersSection />
-      <OverviewSection/>
+      <OverviewSection />
       {/* <FeaturesSection/> */}
-      <DiscordSection/>
-      <NewsSection/>
-      <NewsletterSection/>
+      <DiscordSection />
+      <NewsSection />
+      <NewsletterSection />
     </div>
   );
 }
