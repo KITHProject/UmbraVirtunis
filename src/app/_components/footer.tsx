@@ -6,7 +6,7 @@ import token from '@/assets/cosmic-shard.png';
 
 export default function Footer() {
   return (
-    <footer className=" bg-black/80  py-8 px-4 md:px-8 shadow-[0_10px_45px_1px_rgba(0,0,0,0.4)]">
+    <footer className="bg-black/80  py-8 px-4 md:px-8 shadow-[0_10px_45px_1px_rgba(0,0,0,0.4)]">
 
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start mb-8">
