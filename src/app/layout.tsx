@@ -5,6 +5,7 @@ import Header from './_components/header';
 import { Iceland } from 'next/font/google';
 import GridPattern from '@/components/magicui/grid-pattern';
 import { Suspense } from 'react';
+import Footer from './_components/footer';
 
 export const metadata: Metadata = {
   title: 'Umbra Virtunis',
@@ -41,6 +42,7 @@ export default function RootLayout({
                 </div>
               </Suspense>
             </div>
+            <Footer/>
           </div>
         </body>
       </html>
