@@ -5,7 +5,7 @@ import { useIsVisible } from '@/hooks/useIsVisible';
 import YouTubeEmbed from '@/components/youtube-embed';
 
 type Props = {
-  section2Ref: React.RefObject<HTMLDivElement>
+  section2Ref: React.RefObject<HTMLDivElement>;
 };
 
 export default function InformationSection({ section2Ref }: Props) {
@@ -27,7 +27,7 @@ export default function InformationSection({ section2Ref }: Props) {
           <p className="cosmic-text-shadow text-5xl text-white">
             START WORKOUT
           </p>
-          <YouTubeEmbed videoId="vW2_Dnf4sEo" />
+          <YouTubeEmbed videoId="2Gg6Seob5Mg" />
         </div>
       </div>
     </section>
